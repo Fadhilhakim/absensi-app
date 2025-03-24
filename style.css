@@ -1,0 +1,136 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: rgb(224, 224, 224);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+nav {
+    background-color: rgb(74, 197, 253);
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.container {
+    margin: auto;
+    background-color: #f9f9f9;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+}
+.row {
+    display: flex;
+    justify-content: space-around;
+}
+.col {
+    align-items: center;
+    margin: 20px;
+}
+
+.img {
+    border: 10px solid white;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+
+}
+
+.success {
+    margin-top: 20px;
+    background-color: rgb(124, 249, 124);
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.error {
+    margin-top: 20px;
+    background-color: red;
+    color:white;
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.absensi-container {
+    max-width: 400px;
+    width: 100%;
+    height: auto; /* Atur tinggi sesuai kebutuhan */
+    border-left: 3px solid #ccc;
+    padding: 15px;
+    font-size: 12px;
+    line-height: 1.5;
+    background-color: #f9f9f9;
+    overflow: auto; /* Agar konten tidak melampaui batas */
+}
+
+.absensi-container ul {
+    margin-left: -20px;
+}
+
+.kop-surat {
+    text-align: center;
+    justify-content: center;
+    padding: 20px;
+
+}
+
+.logo {
+    width: 100px; /* Sesuaikan ukuran logo */
+    position: absolute;
+    left: 0; margin-left: 20%; margin-top: 20px;
+}
+
+h1, h2, h3, p {
+    margin: 5px 0;
+}
+.nama-sekolah {
+    font-size: 44px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+hr.garis {
+    border: 1px solid black;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* // Jika nomor ditemukan, kirim ke sender.php
+// if ($nomor) {
+//     header("Location: https://api.fonnte.com/send/?target=" . urlencode($nomor)."&message=Test%20Kirim%20pesan&token=fQCqoKXtEWNirTUMqcf4&redirect=https%3A%2F%2Fwasender.test%2Fsender.php%3Fnomor%3D".urlencode($nomor));
+//     exit();
+// } else {
+//     $error = "ID tidak ditemukan.";
+// } */
+
+#clock {
+    font-size: 2.5rem;
+    color: #333;
+}
