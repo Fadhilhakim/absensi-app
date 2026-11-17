@@ -20,7 +20,7 @@
 </head>
 <body>
     <h1>Pesan Terkirim Whatsapp Orang Tua </h1>
-    <p>Pesan dikirim ke  : <?php echo $nomor; ?></p>
+    <p>Pesan dikirim ke  : </p>
     <p>Anda akan diarahkan kembali ke halaman utama dalam 5 detik.</p>
 </body>
 </html> -->
