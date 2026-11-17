@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>A4 — 9 kartu (57×87mm) per halaman — 2 halaman</title>
+  <style>
+    /* Page / sheet setup */
+    @page { size: A4; margin: 0; }
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      background: #fff;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      padding: 10mm; /* safety margin when viewing on screen */
+      box-sizing: border-box;
+    }
+
+    .sheet {
+      width: 210mm; /* A4 width */
+      height: 297mm; /* A4 height */
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.04) inset;
+      box-sizing: border-box;
+      margin: 0 auto 10mm auto;
+      padding: 10mm; /* inner page margin */
+      display: grid;
+      grid-template-columns: repeat(3, 57mm);
+      grid-template-rows: repeat(3, 87mm);
+      justify-content: start;
+      align-content: start;
+      gap: 8mm; /* spacing between cards */
+      background: white;
+      page-break-after: always;
+      overflow: hidden;
+    }
+
+    /* Card box - exact fixed size in mm */
+    .card {
+      width: 57mm;
+      height: 87mm;
+      box-sizing: border-box;
+      border: 1pt solid #222; /* visible trim line for layout */
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 11pt;
+      line-height: 1.1;
+      padding: 4mm;
+      background: #ffffff;
+    }
+
+    .card .title { font-weight: 700; font-size: 12pt; text-align: center; }
+    .card .subtitle { font-size: 9pt; opacity: .8; margin-top: 4px; text-align:center }
+
+    /* Print helpers — remove shadows and other screen-only visuals */
+    @media print {
+      body { padding: 0; }
+      .sheet { box-shadow: none; margin: 0; padding: 10mm; }
+      .card { border: 0.5pt solid #000; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Page 1 -->
+  <div class="sheet" id="page-1">
+    <!-- 9 cards (3x3) -->
+    <div class="card"><div class="title">Kartu 1</div><div class="subtitle">57×87 mm</div></div>
+    <div class="card"><div class="title">Kartu 2</div><div class="subtitle">57×87 mm</div></div>
+    <div class="card"><div class="title">Kartu 3</div><div class="subtitle">57×87 mm</div></div>
+
+    <div class="card"><div class="title">Kartu 4</div><div class="subtitle">57×87 mm</div></div>
+    <div class="card"><div class="title">Kartu 5</div><div class="subtitle">57×87 mm</div></div>
+    <div class="card"><div class="title">Kartu 6</div><div class="subtitle">57×87 mm</div></div>
+
+    <div class="card"><div class="title">Kartu 7</div><div class="subtitle">57×87 mm</div></div>
+    <div class="card"><div class="title">Kartu 8</div><div class="subtitle">57×87 mm</div></div>
+    <div class="card"><div class="title">Kartu 9</div><div class="subtitle">57×87 mm</div></div>
+  </div>
+
+  <!-- Page 2 -->
+  <div class="sheet" id="page-2">
+    <!-- another 9 cards (you can change text or duplicate content as needed) -->
+    <div class="card"><div class="title">Kartu 10</div><div class="subtitle">57×87 mm</div></div>
+    <div class="card"><div class="title">Kartu 11</div><div class="subtitle">57×87 mm</div></div>
+    <div class="card"><div class="title">Kartu 12</div><div class="subtitle">57×87 mm</div></div>
+
+    <div class="card"><div class="title">Kartu 13</div><div class="subtitle">57×87 mm</div></div>
+    <div class="card"><div class="title">Kartu 14</div><div class="subtitle">57×87 mm</div></div>
+    <div class="card"><div class="title">Kartu 15</div><div class="subtitle">57×87 mm</div></div>
+
+    <div class="card"><div class="title">Kartu 16</div><div class="subtitle">57×87 mm</div></div>
+    <div class="card"><div class="title">Kartu 17</div><div class="subtitle">57×87 mm</div></div>
+    <div class="card"><div class="title">Kartu 18</div><div class="subtitle">57×87 mm</div></div>
+  </div>
+
+  <!-- Usage notes (screen only) -->
+  <script>
+  </script>
+<button id="download" style="position:fixed; top:10px; right:10px; z-index:999;">Download PDF</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+  document.getElementById('download').addEventListener('click', function () {
+    const pages = document.querySelectorAll('.sheet');
+    const opt = {
+      margin: 0,
+      filename: 'kartu-2halaman.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    };
+
+    let worker = html2pdf().set(opt).from(pages[0]).toPdf();
+
+    for (let i = 1; i < pages.length; i++) {
+      worker = worker.get('pdf').then(pdf => {
+        pdf.addPage();
+      }).from(pages[i]).toPdf();
+    }
+
+    worker.save();
+  });
+</script>
+</body>
+</html>
