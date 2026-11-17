@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Barcode CODE128</title>
+  <script src="js/JsBarcode.code128.min.js"></script>
+  <style>
+    .barcode {
+      width: 200px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <svg class="barcode"
+    jsbarcode-format="code128"
+    jsbarcode-value="123456789012"
+    jsbarcode-textmargin="0"
+    jsbarcode-fontoptions="bold">
+  </svg>
+
+  <script>
+    // Jalankan inisialisasi
+    JsBarcode(".barcode").init();
+  </script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !^/index\.php$ [NC]
+# Allow common asset files (adjust as needed)
+RewriteCond %{REQUEST_URI} !\\.(jpe?g|png|gif|css|js|ico)$ [NC]
+RewriteRule ^ - [F,L]

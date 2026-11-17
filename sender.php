@@ -1,8 +1,8 @@
-<?php
+<!-- <?php
 // sender.php
 
 // Mengambil nomor dari query string
-$nomor = isset($_GET['nomor']) ? htmlspecialchars($_GET['nomor']) : '';
+// $nomor = isset($_GET['nomor']) ? htmlspecialchars($_GET['nomor']) : '';
 
 ?>
 <!DOCTYPE html>
@@ -20,7 +20,7 @@ $nomor = isset($_GET['nomor']) ? htmlspecialchars($_GET['nomor']) : '';
 </head>
 <body>
     <h1>Pesan Terkirim Whatsapp Orang Tua </h1>
-    <p>Pesan dikirim ke  : <?php echo $nomor; ?></p>
+    <p>Pesan dikirim ke  : </p>
     <p>Anda akan diarahkan kembali ke halaman utama dalam 5 detik.</p>
 </body>
-</html>
+</html> -->

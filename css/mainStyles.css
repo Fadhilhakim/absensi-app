@@ -1,0 +1,289 @@
+/* === Global Reset & Font === */
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', 'Poppins', Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #f4f6f9;
+    color: #1e293b;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* === List === */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* === Container Utama === */
+.container {
+    margin: 10px auto;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 10px;
+    max-width: 88%;
+    overflow: hidden;
+    justify-content: center; 
+    transition: box-shadow 0.3s ease;
+    animation: fadeIn 0.5s ease;
+
+}
+
+/* === Grid Layout === */
+.row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+}
+
+.col {
+    align-items: center;
+    flex: 1;
+    text-align: center;
+}
+
+
+/* === Gambar === */
+.img {
+    border-radius: 5px;
+    border: 6px solid #fff;
+    width: 100%;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    justify-self: center;
+}
+
+/* === Table === */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+    font-size: 14px;
+}
+
+table th {
+    background: #f8fafc;
+    color: #334155;
+    font-weight: 600;
+}
+
+/* === Alert Message === */
+.success, .error {
+    margin-top: 20px;
+    padding: 5pxpx;
+    border-radius: 12px;
+    text-align: center;
+    animation: fadeIn 1s ease;
+}
+
+.m-alert {
+    margin-bottom: -20px;
+}
+
+.success {
+    background-color: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+.error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+/* === Kartu Absensi === */
+.absensi-container {
+    width: 40%;
+    background: #ffffff;
+    padding: 20px;
+    font-size: 12px;
+    line-height: 1.6;
+    border-left: 4px solid #3b82f6;
+    overflow: auto;
+}
+
+.kop-surat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;           
+    text-align: center;
+    padding: 20px;
+    color: white;
+    background-color: rgb(41, 41, 255);
+    width: 100vw;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+}
+
+.kop-surat div {
+    margin: 5px;
+    padding: 10px;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin-left: -100px;
+    display: block;
+}
+
+.npsn {
+    border-top: 1px white solid;
+    padding: 10px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.nama-sekolah {
+    font-size: 40px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.kop-surat h1,
+.kop-surat h2,
+.kop-surat h3,
+.kop-surat p {
+    margin: 0;
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+
+.kop-surat h2 {
+    font-size: 20px;
+    color: #e2e8f0;
+}
+
+.kop-surat h3 {
+    font-size: 17px;
+    color: #c2e0ff;
+}
+
+/* === Responsif untuk layar kecil (HP/tablet) === */
+@media (max-width: 768px) {
+    .kop-surat {
+        text-align: center;
+        padding: 15px;
+    }
+
+    .logo {
+        width: 70px;              /* logo mengecil */
+        margin-bottom: 10px;
+    }
+
+    .kop-surat h1,
+    .kop-surat h2,
+    .kop-surat h3,
+    .kop-surat p {
+        margin: 0;
+        margin-top: -5px;
+        margin-bottom: -5px;
+    }
+
+    .nama-sekolah {
+        font-size: 24px;
+    }
+
+    .kop-surat h2 {
+        font-size: 14px;
+    }
+
+    .kop-surat h3 {
+        font-size: 14px;
+    }
+
+    .kop-surat p {
+        font-size: 12px;
+    }
+}
+
+/* Tambahan opsional: responsif untuk layar sangat kecil */
+@media (max-width: 480px) {
+    .nama-sekolah {
+        font-size: 24px;
+    }
+
+    .kop-surat h2, .kop-surat h3 {
+        font-size: 14px;
+    }
+
+    .logo {
+        width: 60px;
+    }
+}
+
+
+/* === Jam Digital === */
+#clock {
+    font-size: 2.2rem;
+    color: #0f172a;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+}
+
+/* === Modal Overlay === */
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.45);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+/* === Error Text (Input) === */
+.error-text {
+    color: #b91c1c;
+    font-size: 18px;
+    margin-top: 6px;
+    display: none;
+}
+
+
+/* === Animasi Ringan === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* === Responsif === */
+@media (max-width: 768px) {
+    .container {
+        max-width: 95%;
+        padding: 20px;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .absensi-container {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+}
+
